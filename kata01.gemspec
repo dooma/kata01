@@ -4,8 +4,8 @@ require File.expand_path('../lib/kata01/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["dooma"]
   gem.email         = ["calinutz96@yahoo.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{"read data and print smallest temperature"}
+  gem.summary       = %q{"Just some practice"}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
