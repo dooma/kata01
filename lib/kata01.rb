@@ -1,7 +1,7 @@
-require "kata01/version"
+#require "./lib/kata01/version"
 
-  class Kata01
-	attr_accessor :nr_days, :fisier
+class KataTraining
+	attr_accessor :fisier
 	def initialize
 		citire
 		prelucrare
@@ -9,17 +9,8 @@ require "kata01/version"
 	
 	#functia de citire
 	def citire
-	
-		puts "Enter file name: "
-		
-		#deschide fisier
-		@fisier = File.open(File.expand_path(gets.strip),'r')
-		
-		#cere numarul de zile
-		puts "Enter number of days (ex 28,29,30,31)"
-		@nr_days=gets.strip.to_i
-		@nr_days+=10
-		
+			#deschide fisier
+			@fisier = File.open("/home/calin/kata01/weather.dat",'r')
 	end
 	
 	#functi de prelucrare a datelor
@@ -31,11 +22,10 @@ require "kata01/version"
 		dy=0
 		#impart continutul fisierului in linii
 		@fisier.each_line do |s|
-
+			s=s.split(' ')
 			#incepand cu linia 9 prelucram datele
-			if linie >= 9 && linie < @nr_days
-				#fiecare linie este impartita in sub-stringuri
-				s=s.split(' ')
+			if linie >= 9 && s[0].to_i > 0
+				
 				#prima coloana
 				day=s[0].to_i
 				#a doua coloana
@@ -55,4 +45,3 @@ require "kata01/version"
 
 	end
 end
-Kata01.new

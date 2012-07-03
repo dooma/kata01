@@ -15,3 +15,4 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Kata01::VERSION
 end
+
